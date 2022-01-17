@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/style.css" rel="stylesheet">
+    <title>Home</title>
+    <style>
+        /* Reset CSS */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Arial, Helvetica, sans-serif; /*font-fam có tính kế thừa nên bỏ vô thẻ html để đc tất cả các font trong web*/
+        }
+        /* 
+        1. vị trí
+        2. kích thước
+        3. màu sắc
+        4. kiểu dáng
+        */
+        /* #main { chứa cả website
+
+        } */
+
+        #header { /*đầu trang*/
+            height: 61px;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            border-bottom: 1px solid rgb(175, 173, 173);
+        }
+
+        #nav { /*thanh điều hướng nằm trong phần header*/
+            display: flex; 
+            align-items: center;
+            height: 60px;
+        }
+
+        #nav li { /*css lên all tp của nav*/
+            position: relative; /*cha của .subnav => xem lại position*/
+            list-style: none;
+        }
+        
+        #nav > li > a { /*css trực tiếp vào a con của li*/
+            color: #333;
+        }
+        
+        #nav li a { /*css lên từng tp của menu nav*/
+            text-decoration: none; /*bỏ gạch chân*/
+            padding: 0 24px;
+            line-height: 60px;
+        }
+        
+        #nav > li:hover { /*css khi di chuột vào (hover)*/
+            color: #000; /*khi di chuột vào chữ thành màu đen */
+            background-color: #ccc; /*background thành màu xám*/
+        }
+
+        #nav .logo {
+            color: #049fd9;
+            font-size: 23px;
+        }
+
+        #logout {
+            padding: 10px;
+        }
+        
+        #logout a {
+            line-height: 43px;
+            text-decoration: none;
+            color: #049fd9;
+        }
+
+        .card-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-row {
+            display: flex;
+        }
+
+        .card {
+            width: 453px;
+            height: 293px;
+            border: 1px solid rgb(175, 173, 173);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .card-img {
+            width: 250px;
+            height: 200px;
+        }
+
+        .card-btn {
+            margin-top: 20px;
+            border:none;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .card-btn a {
+            text-decoration: none;
+            color: #27afd8;
+        }
+    </style>
+</head>
+<body>
+    <div id="home">
+        <div id="header">
+            <ul id="nav">
+                <li><a class="logo" href="/"><strong>Cisco</strong> DNA Center</a></li>
+                <li><a href="">DESIGN</a></li>
+                <li><a href="">POLICY</a></li>
+                <li><a href="">PROVISION</a></li>
+                <li><a href="">ASSURANCE</a></li>
+            </ul>
+            <div id="logout">
+                <a href="/login">Log Out</a>
+            </div>
+        </div>
+        <div id="content">
+            <div class="card-wrapper">
+                <div class="card-row">
+                    <div class="card">
+                        <img class="card-img" src="https://lh3.googleusercontent.com/9GEnV4dMKQeb9V-TPEYcPmtRqxBTU8Mwbhs2V29pm9k_qzWoNXhh8lnqT4QhkI7b7C4-KIAFc5LItysWRnUffCLHtoYLvUHKgP9A0UHPAdHPHjR5s5QyYIfbpxBBYwMGc3gFaT6F11UESBAkVXJAX48_6SuWLfL5TMdYF_LUcLLLOmEJCVLOfby0NxTIkd_-GAvxYebhr0MF2DLBnQwlAhxCukHIMfwwk27ENQENXtTBg4CiDXMKdU5aKOxO6-MihFdmnXvi09SQoJOBFbtIuUAQ19AFmgmWpMojY-tQwVdwDMNcEQRSQcQSDu7efGHIPNCCp2Rt8h4wdcR1-tVU81Whx3iasiJOYsJIC6jZMWGgJ62z639gkKanS_oi52HOJEIY6II04Tsq6N-q-R-1akdp5oIsd-8zAfPjZjHvF1hKQUa4aa50TPcxwNb2ywwgXCRv8fKn2RuhYK0wzMafvKrlQ1mM44e_fJoN4Nsu6U_zckYXWsguZdMSbTKjPluTVxrjQhPmBjqCUJl582XoPpL58rsXANW6yH_oCQ20jvMJsG0azsMebeP7wWqP3yBIWQCIxzTfh3BP-zctcWhXk1xkKdWrrAh7KWj58B29wHtv7Cv5MEaLMY8ripA8o1U7bBdp6Am_rzYPyT10bqqE9jISlTwsInrVoFxh3CfqRKCpmaEAI_47EroRBUrmKyeN4sZ46dxBWrOKPVXMUxU8YUM=w124-h97-no?authuser=0" alt="">
+                        <button class="card-btn">
+                            <a href="/health"><strong>Device Health</strong></a>
+                        </button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="https://lh3.googleusercontent.com/Z5LjgU2bQf5El17_YdBOW1UGgTuY-ObkYr7B4ypjal22P3705XFiVelxrjNAH20THFnZ8LqWkaf36rQLoBzYo1UZsrEcnhLJlaRswpWCWnu7RMCUkthqgZ9wGekAAiXYd-LdZK-NrLjGjFKkvAe-fTCnnC2F8bOPchpcG-bxDgs7lTo-YwQ8wv06kudWUR7yaKfLflvlaxPUlDYYzefJyoMnKSELV_-J7L169dWPk7FwjS9x9DIIlpwjx5850aOf12edmfQJOF5LLWGUBEDeP9FfUQxacMws18qRAY-RJJywkQuwuJQHuh4l0Wr0DIja8OY9J_po9g7R6ndoIL5mEBTZkt7LKCvUncmIgDvUjtCMyglmsgE8ECAdzBdrJZ2E1fcdqSXg6mTr92e9MhQT1lWC8OgpeMk6CXlWvHn60vOE3p0vSzJM268c2nxqFpMdbatuYH-rNRVCeriW386zM7Yx12V2q8LNl3ZURTICbgo1uMFa0XCSuF7QWN6mTrk8Mf1JrGKjXbxX7xEoHaGWjIotPma9AEuX8XhDhQMeZ5VLwbao_Xb5B6yxVl_JwIgzzjzCStETJbiEkpaBzSQMSgFHsZrRZA8rVafgLaBPDGHuiDPqBSp2TIVyGhcJqkMVPW7OUhOHPklwsomCfjaF6j_PfUuf6q7CHiWyp00UZSM_n0F9yJUU5q_fUZ7x2xcJ4-L0U4f4Dl1fgL0J1Zl_pQs=w83-h98-no?authuser=0" alt="">
+                        <button class="card-btn">
+                            <a href="/device"><strong>Network Devices</strong></a>
+                        </button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="https://lh3.googleusercontent.com/3MfIocjVo6q_76ShbSE5N-ozPvwebZfgtuYqCKLRwamiTB1LnPbWt9JSy8T9FNRut1xi5D72gTQkqYFLBpCyqZFCNzwVLcDKOi6ol5KiPBYYYU9p1dtMti-8VhMYp8MsQTutLpYOTZw2GYuWvK8VVeEADdACXSuwaeXBtNcWBCpyy61KLoNFsuPaIYT19J1Wacom28xiUQG6iBO6XFffIPwskRg_EvMZwhkkzgKwEeZ8VvVfNQza7AT8e0b0GATfopW5iPpi9H4MGgPqLX-KGhKc5IdFmg1Rhr1BJ5qpE7jACgdbqhKv614m1FHeZWHxipU5GvQFfEFD0tvE9f578L67epzBB6Bpn-LIkQ5Ag0St67R-EV3QHxbMqrngEiKzUUeUbNrzzbSgOBaGYtXYD3vRgFFSRTfElNSI3fFS4Xs5sGOJU0tI9uM4W0S6pd0geLP1gH4UrdhdyiHgTy_RALP3BKXBuIWGB4bKrAUEfey5oiwovocTFgsT0xg2kDlZGrAuXdAdJbLaCmTQO0Q6jgKiOp9hy2FHnLklJtFWOwaUR0viFIDjiQolASR6ZLg2e-MtuDdTnCLJQTJVBDF_Zx3fKyf9ZBlsfQoQJ-RhTlRv_y50VDUrOou5KNzLPQ-8Nd813HAIEAWdMaiU9xHd-y-bmnXTVLkkxj43BopPd5KrZCkWwyjzmMG1RxeXOyO5vhsGuXsqShwBZ7XxpQqgbxc=w80-h91-no?authuser=0" alt="">
+                        <button class="card-btn">
+                            <a href="/topology"><strong>Topology</strong></a>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-row">
+                    <div class="card">
+                        <img class="card-img" src="https://lh3.googleusercontent.com/Y_nYPkpawCroGw5fitMm4OnJnvHfWD2zrftwVJeHMoCglrBr2DOz1Xbtw-fcrz6WTYQ4AGswmCtqs080sVouPOt5O03Xa8IisF_DZkXc-XD7QJPGuSyA_I3eV1XtO9tJXdQuXMOJUHALQu63sw8R-7vpCh1x-CmiYFX242xPvWkfMkL91z7xw15aqtc8Jfl01PxNI8jLMdt5v-ZKGnfa1yufyI0bbsQEgnuI8TxVpHQNk5y4nVnaDJf8ZWsdM_-Fo_Fb_qvtgUiYpYwv9VUQyA3933VCoPfGw-7Cfpd4pxG3Fvlj1xP9raNEpxipKsu3CymMpowbcu1libgnQqkGqK_znwpVafE7krrbidPwxPhJu-MN1hW_SwtZUyHm6VqVkkHK8-wqprvjdxeF-PvSg6VRoUU7-7ycy4zhA5iWoFDF6-CpdoY9nW0x2WT3tChUesVCkRgovtyGiZcu1oyvfigpPApUBVnSEAISnSqsY8iYXTHo3QeT9mSO1MqxamD--2VELntKPcK3o1YybR6q6P5ZJFOh042f-xcppnFIwPvxdMVooue5VU1IqQ_If9xmdg5VtcjfypRF9Nas5dR9cps4zut6GmbKUtoqoll_x3gwt5WJIAFBCgaRy3JH-XnHXk7zyPqvIt-UOdb_bv23W2_889_IxQw1dK3GaJwylSycgVfLMbtqAubtyO8R5UfhKcd9qzpzCMwjvdePnW2_jJs=w105-h93-no?authuser=0" alt="">
+                        <button class="card-btn">
+                            <a href="/vlan"><strong>Vlan</strong></a>
+                        </button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="https://lh3.googleusercontent.com/LZcWoKm7gR2BLYmQ3FQImoYLU-n5fRcO4ubyQbo8SjD2Nsc_4gqT0vfHwp3jmDPz21sXmi3vv0I15HOpVycuwSGE34XkzRImzOhoBpnZVHSvbjIAayeI0RhKeI6DqgnlaAW7dYFYistbj-mNi8nfhOkZPhbQBTVSkwK3ymjWPra593eBr_ttefbpLaWEVGFhRw72ddvyE_MToCaUJPkxH2bB9GSsACJL_LicM6Ln8XOc5wpjQeL9BRluuGV9CHGxf-o-OldS2WPbghL_eYdfRfk2JEcGFOpr71uxeERIBm61-24LEKfNhpaUcWGYL6phVmYiFYDehwAsj4krxxLyja2C66X-_uKuJvTYHKld8HthUxFVh2_zC0aZNxFf39ddb4PVV702ot1vdQXLceuAd1bInJ0aWSqR1aaJuvlOux40EmbZSRdlqC3yAog8egcOweRXja2IWW-cZecyqLiCcqfq_-uiyZd3Y6t9d0zTOCmg8C1qnBzcrTAG5A8VBQ4x9VhJG_txblzNL_C-naxYSdm7h09-PDj-EVqGtGXnTLq3uC8UaAAQDSQ9nAOZSTy50Uqeo9ArxaxuTuUP5NLQevPeKOU0ibY37j61b4LL4iefIRjPFj5kHKXp2u4AV__RI7RcitYhlDog-PC2o5f8acDUin8Xz8cQmfV3SgYklCMHU7dkiSrDy1ARW5WKPi1Z9LL2My4wLuqAkkXy8cYifk4=w75-h98-no?authuser=0" alt="">
+                        <button class="card-btn">
+                            <a href="/site"><strong>Sites</strong></a>
+                        </button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="https://lh3.googleusercontent.com/3yLXfYbKEJzznsUyAmPEUwEYeEQY87fdhhcc5ScKAtPXlA5brbll8s91e0hcORbmgVeKbtu9UoK302AuTWNNiSjbBonrjQ4DDyTS0D8j1jRBSIl9R7qBvksVdxVo77gOSSXUftzXQ5KCQrq5RvJihpRPaUSBY2S6M375W1yvD3UXRB1XPQGK4NdbPK7SlWjHW6-yKTI0GpoB7rwMIU9e3WjWrDxMh75VOYjWc4QT7mbyOAupGeXWTzxuZUXgq25JLh0kBarXEi9BggFIYlEib4Q2rz922ID5g4e3xjuVIdGC-dhDvUgKEJDvzVoIcFq-OoYjDwuLoX_xxNQI6lSAv35G-SaWmtSZ2syILeBaA5egOGT_APLnYC8V4NiVLQOhz_8JUTOzuuDsD83VrE78tN4CmTN0oAxtS8CdhH5NvHoO3OU-ezU4mhN4WLcbfUnwJiGW8oz0-aSi-c3Rl0VeFAwoMu9tt0p5l5Bx1bpexxY5jsZutNNtYAlqvR9-pSv7fQGsm1w6Iy403c_as84sD8MyRmnl9ZrWlDWsVUXbrjMxOSrpTpBea_m7kEfWhz3o2FGns9yjjAVuYoXPYwFTnaG_SKABvNLYmdjIVWzq64TH31zJublIgfC8tnAAson7B-SKTXOfJCMR64APW3OBEgzF0NjxZEBB9mS6Y52vZLqtqp8TuojdjO2yr_19SESCw9weq9ckZIlerTHdRCoX-0A=w81-h84-no?authuser=0" alt="">
+                        <button class="card-btn">
+                            <a href="/swim"><strong>Image</strong></a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

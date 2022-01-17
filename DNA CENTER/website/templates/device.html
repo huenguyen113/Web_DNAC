@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js" integrity="sha512-tMabqarPtykgDtdtSqCL3uLVM0gS1ZkUAVhRFu1vSEFgvB73niFQWJuvviDyBGBH22Lcau4rHB5p2K2T0Xvr6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <style>
+        .chart {
+            width: 700px;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart">
+        <canvas id="myChart" max-width="100" max-height="100"></canvas>
+        <script>
+        const labell = JSON.parse({{name_sta | tojson}})
+        console.log(labell)
+        const datas = JSON.parse({{sta | tojson}})
+        console.log(datas)
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'pie',
+                    data: {
+                    labels: labell,
+                        datasets: [{
+                            label: "Up Vs Down",
+                            data: datas,
+                            backgroundColor: ['#5DA5DA ', '#FAA43A', '#60BD68',
+                                '#B276B2', '#E16851', '#FB8267'],
+                            borderWidth: 1,
+                            hoverBorderColor: "black",
+                            hoverBorderWidth: 2,
+                            hoverBackgroundColor: 'rgba(154, 245, 140)',
+                            pointHoverRadius: 5
+                        }],
+                    },
+                    options: {
+                            title: {
+                                display: true,
+                                    text: "Up Vs Down",
+                                        fontSize: 20,
+                            },
+                            legend: {
+                                position: "right",
+                                    labels: {
+                                    fontColor: "gray"
+                                },
+                                display: true,
+                            },
+
+                            elements: {
+                                hitRadius: 3,
+                            }
+                    }
+                })
+        </script>
+    </div>
+</body>
+</html>
